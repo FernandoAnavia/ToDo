@@ -32,7 +32,7 @@ let db = new sqlite3.Database('./base.sqlite3', (err) => {
 });
 
 //Creamos un endpoint de login que recibe los datos como json
-app.post('/insert', jsonParser, function (req, res) {
+app.post('/agrega_todo', jsonParser, function (req, res) {
     //Imprimimos el contenido del campo todo
     const { todo } = req.body;
    
@@ -53,7 +53,7 @@ app.post('/insert', jsonParser, function (req, res) {
           return;
 
         } else {
-          console.log("Insert was successful!");
+          console.log("Se ha agregado exitosamente!");
         }
     });
 
@@ -69,7 +69,7 @@ app.post('/insert', jsonParser, function (req, res) {
 app.get('/', function (req, res) {
     //Enviamos de regreso la respuesta
     res.setHeader('Content-Type', 'application/json');
-    res.end(JSON.stringify({ 'status': 'ok2' }));
+    res.end(JSON.stringify({ 'status': 'Todo es correcto :)' }));
 })
 
 
@@ -80,7 +80,7 @@ app.post('/login', jsonParser, function (req, res) {
 
     //Enviamos de regreso la respuesta
     res.setHeader('Content-Type', 'application/json');
-    res.end(JSON.stringify({ 'status': 'ok' }));
+    res.end(JSON.stringify({ 'status': 'tarea agregada' }));
 })
 
 //Corremos el servidor en el puerto 3000
