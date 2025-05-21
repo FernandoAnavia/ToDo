@@ -11,6 +11,7 @@ const app = express()
 const jsonParser = bodyParser.json()
 
 
+
 // Abre la base de datos de SQLite
 let db = new sqlite3.Database('./base.sqlite3', (err) => {
     if (err) {
